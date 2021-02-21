@@ -1,0 +1,17 @@
+@import "../src/styles/includes/global.css";
+
+@define-mixin container $test{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(12px, 2%, 48px);
+}
+
+body {
+  @mixin container name;
+  #border: 2px solid red;
+  display: flex;
+  color: var(--palette2);
+  &::placeholder {
+    color: gray;
+  }
+}

@@ -1,0 +1,21 @@
+/** 
+ * Global Styles 
+ */
+
+/* Variables */
+
+:root {
+  --palette0: #000;
+  --palette1: #fff;
+  --palette2: #333; 
+}
+
+p {
+  border: 2px solid blue;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    border: 12px solid red;
+  }
+}

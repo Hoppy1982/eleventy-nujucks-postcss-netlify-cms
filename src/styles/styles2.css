@@ -1,0 +1,8 @@
+@import "../src/styles/includes/global.css";
+
+
+@media screen and (max-width: 800px) {
+  body {
+    border: 12px solid red;
+  }
+}
