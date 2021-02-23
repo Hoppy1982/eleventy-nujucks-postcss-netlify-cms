@@ -3,6 +3,14 @@ const postcss = require("postcss");
 
 
 module.exports = function(eleventyConfig) {
+	/* Copy Static Files to /_Site */
+	eleventyConfig.addPassthroughCopy({
+    "./src/admin/config.yml": "./admin/config.yml",
+		"./src/admin/index.html": "./admin/index.html",
+		"./src/assets/images": "./assets/images"
+  });
+
+
 	/* HTML pretty */
 	eleventyConfig.addTransform("html-pretty", function(content, outputPath) {
 		if( outputPath.endsWith(".html") ) {
@@ -32,15 +40,8 @@ module.exports = function(eleventyConfig) {
 	});
 
 
-	/* Trigger build on css changes */
+	/* Trigger build on changes */
 	eleventyConfig.addWatchTarget('./src/**');
-
-
-	/* Copy Static Files to /_Site */
-	eleventyConfig.addPassthroughCopy({
-    "./src/admin/config.yml": "./admin/config.yml",
-		"./src/admin/index.html": "./admin/index.html",
-  });
 
 
 	/* Config */
