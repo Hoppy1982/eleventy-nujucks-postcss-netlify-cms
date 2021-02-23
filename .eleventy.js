@@ -36,6 +36,12 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addWatchTarget('./src/**');
 
 
+	/* Copy Static Files to /_Site */
+	eleventyConfig.addPassthroughCopy({
+    "./src/admin/config.yml": "./admin/config.yml",
+  });
+
+
 	/* Config */
 	return {
 		dir: {
